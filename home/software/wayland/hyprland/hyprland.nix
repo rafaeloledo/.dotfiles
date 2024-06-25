@@ -1,4 +1,4 @@
-{inputs, ...}: {
+{inputs, pkgs, ...}: {
   home.packages = with pkgs; [
     pavucontrol
     pamixer
