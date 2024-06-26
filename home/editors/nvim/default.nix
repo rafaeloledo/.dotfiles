@@ -619,7 +619,7 @@
 
   home.file.".config/nvim/lua/plugins/gitsigns.lua" = {
     recursive = true;
-    enable = true;
+    enable = false;
     text = ''
       return {
         "lewis6991/gitsigns.nvim",
