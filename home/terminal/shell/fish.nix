@@ -60,13 +60,14 @@
       c = "clear";
       q = "exit";
       y = "yazi";
+      dotfiles = "cd ~/.dotfiles";
       installed = "nix-store --query --requisites /run/current-system | cut -d- -f2- | sort | uniq | sk";
       installedall = "nix-store --query --requisites /run/current-system | sk";
       cleanup = "sudo nix-collect-garbage --delete-older-than 1d";
       listgen = "sudo nix-env -p /nix/var/nix/profiles/system --list-genereations";
       temp = "cd ~/tmp/";
-      test-build = "sudo nixos-rebuild test --flake .";
-      switch-build = "sudo nixos-rebuild switch --flake .";
+      home-build = "home-manager build --flake .";
+      home-switch = "home-manager switch --flake . -b backup";
     };
   };
 }

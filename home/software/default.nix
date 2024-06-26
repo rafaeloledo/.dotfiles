@@ -3,6 +3,7 @@
   imports = [
     ./wayland
     ./tools
+    ./browsers
   ];
 
   # Allow unfree packages
