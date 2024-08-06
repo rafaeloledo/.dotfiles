@@ -5,3 +5,4 @@
 --ignore=nix
 --ignore=scripts
 --ignore=.termux
+--ignore=wallpapers
