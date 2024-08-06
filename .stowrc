@@ -6,3 +6,4 @@
 --ignore=scripts
 --ignore=.termux
 --ignore=wallpapers
+--ignore=win32
