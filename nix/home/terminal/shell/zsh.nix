@@ -26,8 +26,8 @@
       td = "tmux detach";
       ll = "eza -lga --icons";
       cat = "bat --theme=\"Solarized (dark)\" --number --color=always --paging=never --tabs=2 --wrap=never";
-      home-build = "home-manager build --flake /mnt/kingston/dotfiles-nix";
-      home-switch = "home-manager switch --flake /mnt/kingston/dotfiles-nix -b backup";
+      home-build = "home-manager build --flake /mnt/share/dotfiles-nix";
+      home-switch = "home-manager switch --flake /mnt/share/dotfiles-nix -b backup";
     };
   };
 }

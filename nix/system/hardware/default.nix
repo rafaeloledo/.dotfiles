@@ -14,7 +14,7 @@
     fsType = "vfat";
     options = [ "fmask=0022" "dmask=0022" ];
   };
-  fileSystems."/mnt/kingston" =
+  fileSystems."/mnt/share" =
   {
     device = "/dev/disk/by-uuid/9df36583-2709-4e1c-ae2d-104607c98528";
     fsType = "ext4";

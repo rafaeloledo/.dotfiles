@@ -51,11 +51,12 @@ set -gx PATH ~/.local/scripts $PATH 2> /dev/null
 set -gx PATH ~/.cargo/bin $PATH 2> /dev/null
 set -gx PATH $ANDROID_HOME/emulator $PATH 2>/dev/null
 set -gx PATH $ANDROID_HOME/platform-tools $PATH 2>/dev/null
+set -gx PATH ~/.nix-profile/bin $PATH 2>/dev/null
 
 set LOCAL_CONFIG (dirname (status --current-filename))/config-local.fish
 if test -f $LOCAL_CONFIG
   source $LOCAL_CONFIG
 end
 
-# theme
-# fish_config theme choose "Rosé Pine" > /dev/null 2> /dev/null
+zoxide init fish | source
+starship init fish | source
