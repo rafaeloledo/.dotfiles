@@ -7,7 +7,7 @@
 }:
 
 {
-  imports = [ ./libinput.nix ];
+  imports = [ ./libinput.nix ./cloudflared.nix ];
 
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
@@ -114,6 +114,7 @@
     ntfs3g
     spice-vdagent
 		blueman
+		cloudflared
   ];
   system.stateVersion = "24.05";
   nix.settings.experimental-features = ["nix-command" "flakes"];
