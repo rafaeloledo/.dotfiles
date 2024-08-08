@@ -99,6 +99,7 @@
     xorg.xbacklight
     kdePackages.powerdevil
     fish
+		zsh
     cachix
     cudaPackages.cudatoolkit
     nvtopPackages.full

@@ -5,7 +5,27 @@
   pkgs,
   inputs,
   ... 
-}: {
+}:
+let
+  dotfiles = [
+    "wezterm"
+    "doom"
+    "dunst"
+    "fish"
+    "hypr"
+    "i3"
+    "nvim"
+    "picom"
+    "rofi"
+    "starship"
+    "tmux"
+    "viewnior"
+    "waybar"
+    "yazi"
+  ];
+	inherit (config.lib.file) mkOutOfStoreSymlink;
+in
+{
   imports = [
     ./software
     ./terminal
@@ -18,22 +38,12 @@
     stateVersion = "24.05";
   };
 
-	home.file = {
-		".config/wezterm".source = /mnt/share/.dotfiles/wezterm;
-		".config/doom".source = /mnt/share/.dotfiles/doom;
-		".config/dunst".source = /mnt/share/.dotfiles/dunst;
-		".config/fish".source = /mnt/share/.dotfiles/fish;
-		".config/hypr".source = /mnt/share/.dotfiles/hypr;
-		".config/i3".source = /mnt/share/.dotfiles/i3;
-		".config/nvim".source = /mnt/share/.dotfiles/nvim;
-		".config/picom".source = /mnt/share/.dotfiles/picom;
-		".config/rofi".source = /mnt/share/.dotfiles/rofi;
-		".config/starship".source = /mnt/share/.dotfiles/starship;
-		".config/tmux".source = /mnt/share/.dotfiles/tmux;
-		".config/viewnior".source = /mnt/share/.dotfiles/viewnior;
-		".config/waybar".source = /mnt/share/.dotfiles/waybar;
-		".config/yazi".source = /mnt/share/.dotfiles/yazi;
-	};
+	home.file = builtins.listToAttrs (map (name: {
+    name = ".config/${name}";
+    value = {
+      source = mkOutOfStoreSymlink "/mnt/share/.dotfiles/${name}";
+    };
+  }) dotfiles);
 
   manual = {
     html.enable = false;

@@ -9,7 +9,6 @@
     anyrun
     wl-clipboard
     hyprpicker
-    xfce.thunar
     wlogout
     hyprpaper
   ];

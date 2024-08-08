@@ -24,6 +24,9 @@
     mysql
     mysql-workbench
     discord
+		lazygit
+    xfce.thunar
+		arduino-ide
   ];
 
 }
