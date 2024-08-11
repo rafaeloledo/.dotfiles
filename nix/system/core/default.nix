@@ -7,7 +7,7 @@
 }:
 
 {
-  imports = [ ./libinput.nix ./cloudflared.nix ];
+  imports = [ ./libinput.nix ];
 
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;

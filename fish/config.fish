@@ -19,8 +19,9 @@ set -gx JAVA_HOME /usr/lib/jvm/default 2>/dev/null
 
 # aliases
 alias g git
-alias ll "ls -lA"
-alias llt "ll --tree"
+alias ll "eza -lga --icons"
+alias l "eza -lga --icons"
+alias lt "eza --tree"
 alias cls "clear"
 
 command -qv neofetch && alias nf neofetch
@@ -32,9 +33,6 @@ if type -q tmux
   alias td "tmux detach"
 end
 
-if type -q eza
-  alias ll "eza -lga --icons"
-end
 
 if type -q bat
   alias cat "bat -p"

@@ -1,4 +1,3 @@
--- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = "https://github.com/folke/lazy.nvim.git"
@@ -15,18 +14,50 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Make sure to setup `mapleader` and `maplocalleader` before
--- loading lazy.nvim so that mappings are correct.
--- This is also a good place to setup other settings (vim.opt)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- Setup lazy.nvim
 require("lazy").setup({
-  spec = {
-    -- import your plugins
-    { import = "plugins" },
-  },
-  -- automatically check for plugin updates
-  checker = { enabled = true },
+	"nvim-lua/plenary.nvim",
+	"sindrets/diffview.nvim", 
+	"hrsh7th/nvim-cmp",
+	"NeogitOrg/neogit",
+	"nvim-tree/nvim-web-devicons",
+
+	{
+		"craftzdog/solarized-osaka.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {},
+	},
+
+	{
+		"windwp/nvim-autopairs",
+		event = "InsertEnter",
+		config = true,
+	},
+
+	{
+		"epwalsh/obsidian.nvim",
+		opts = {
+			workspaces = {
+				{
+					name = "personal",
+					path = "~/vaults/personal",
+				},
+			},
+		},
+	},
+
+	{
+		"nvim-tree/nvim-tree.lua",
+		config = function()
+			require("nvim-tree").setup()
+		end,
+	},
+
+	{
+		"nvim-telescope/telescope.nvim",
+		tag = "0.1.8",
+	},
 })

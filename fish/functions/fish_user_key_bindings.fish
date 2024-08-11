@@ -5,7 +5,7 @@ function fish_user_key_bindings
     # vim like
     bind \el forward-char
 
-    bind \co _fzf_search_directory
+    bind \co yazi
     bind \cd delete-char
     bind \cl 'clear; commandline -f repaint'
     # ctrl-backspace
