@@ -29,7 +29,7 @@ in
   imports = [
     ./software
     ./terminal
-    ./editors
+    ./editors.nix
   ];
 
   home = {
