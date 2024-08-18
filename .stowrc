@@ -3,7 +3,5 @@
 --ignore=clean
 --ignore=setup
 --ignore=nix
---ignore=scripts
 --ignore=.termux
---ignore=wallpapers
 --ignore=win32

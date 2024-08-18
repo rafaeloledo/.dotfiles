@@ -9,7 +9,7 @@
     lua
     rustup
     pipx
-
+    go
     php
 
     nodePackages.pnpm

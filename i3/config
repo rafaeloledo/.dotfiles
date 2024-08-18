@@ -1,5 +1,6 @@
 exec xrandr --output eDP-1-1 --mode 1920x1080 --rate 144.15 --dpi 96
 exec xrandr --output HDMI-0 --mode 1920x1080 --rate 119.98 --dpi 96
+# exec xrandr --output HDMI-1-0 --mode 1920x1080 --rate 119.98 --dpi 96
 exec ~/.local/scripts/randwall
 exec ~/.local/scripts/toggle_inner_display_automatically
 

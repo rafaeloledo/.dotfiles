@@ -18,46 +18,188 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 require("lazy").setup({
-	"nvim-lua/plenary.nvim",
-	"sindrets/diffview.nvim", 
-	"hrsh7th/nvim-cmp",
-	"NeogitOrg/neogit",
-	"nvim-tree/nvim-web-devicons",
+  -- plugins list -- 
+  "xiyaowong/transparent.nvim",
+  "nvim-lua/plenary.nvim",
+  "sindrets/diffview.nvim", 
+  "hrsh7th/nvim-cmp",
+  "NeogitOrg/neogit",
+  "nvim-tree/nvim-web-devicons",
+  "onsails/lspkind.nvim",
+  "tpope/vim-surround",
 
-	{
-		"craftzdog/solarized-osaka.nvim",
-		lazy = false,
-		priority = 1000,
-		opts = {},
-	},
+  "nvim-telescope/telescope-symbols.nvim",
+  { "nvim-telescope/telescope.nvim", branch = "master" }, -- to acess preview scrolling left and right
+  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make', cond = vim.fn.executable 'make' == 1 },
 
-	{
-		"windwp/nvim-autopairs",
-		event = "InsertEnter",
-		config = true,
-	},
+  { "catppuccin/nvim", name = "catppuccin" },
 
-	{
-		"epwalsh/obsidian.nvim",
-		opts = {
-			workspaces = {
-				{
-					name = "personal",
-					path = "~/vaults/personal",
-				},
-			},
-		},
-	},
+  { "windwp/nvim-autopairs", event = "InsertEnter", config = true },
 
+  {
+    "epwalsh/obsidian.nvim",
+    opts = {
+      workspaces = {
 	{
-		"nvim-tree/nvim-tree.lua",
-		config = function()
-			require("nvim-tree").setup()
-		end,
+	  name = "personal",
+	  path = "/mnt/share/anotacoes",
 	},
+      },
+    },
+  },
 
-	{
-		"nvim-telescope/telescope.nvim",
-		tag = "0.1.8",
-	},
+  {
+    "nvim-tree/nvim-tree.lua",
+    config = function()
+      require("nvim-tree").setup()
+    end,
+  },
+
+  'nvim-treesitter/nvim-treesitter-textobjects',
+  {
+    'nvim-treesitter/nvim-treesitter',
+    build = function ()
+      pcall(require('nvim-treesitter.install').update { with_sync = true })
+    end,
+  },
+
+  {
+    "folke/trouble.nvim",
+    lazy = false,
+    dependencies = "nvim-tree/nvim-web-devicons",
+    config = function()
+      require("trouble").setup {
+	-- your configuration comes here
+	-- or leave it empty to use the default settings
+	-- refer to the configuration section below
+      }
+    end
+  },
+
+  {
+    "mistricky/codesnap.nvim",
+    build = "make",
+  },
+
+  'ThePrimeagen/git-worktree.nvim',
+
+  { -- LSP Configuration & Plugins
+    'neovim/nvim-lspconfig',
+    dependencies = {
+      -- Automatically install LSPs to stdpath for neovim
+      'williamboman/mason.nvim',
+      'williamboman/mason-lspconfig.nvim',
+
+      -- Useful status updates for LSP
+      'j-hui/fidget.nvim',
+    }
+  },
+
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = function() vim.fn["mkdp#util#install"]() end,
+  },
+
+  {
+    "folke/twilight.nvim",
+    ft = "markdown",
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    }
+  },
+
+  "tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
+  "lewis6991/gitsigns.nvim",
+
+  { -- Autocompletion
+    'hrsh7th/nvim-cmp',
+    event = "InsertEnter",
+    dependencies = {
+      'hrsh7th/cmp-nvim-lsp',
+      'L3MON4D3/LuaSnip',
+      'saadparwaiz1/cmp_luasnip'
+    },
+    config = function()
+      -- nvim-cmp setup
+      local cmp = require 'cmp'
+      local luasnip = require 'luasnip'
+
+      cmp.setup({
+        view = {
+          entries = "native"
+        },
+        snippet = {
+          expand = function(args)
+            luasnip.lsp_expand(args.body)
+          end,
+        },
+        mapping = cmp.mapping.preset.insert {
+          ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+          ['<C-f>'] = cmp.mapping.scroll_docs(4),
+          ['<C-Space>'] = cmp.mapping.complete(),
+          ['<CR>'] = cmp.mapping.confirm {
+            behavior = cmp.ConfirmBehavior.Replace,
+            select = true,
+          },
+          ['<Tab>'] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+              cmp.select_next_item()
+            elseif luasnip.expand_or_jumpable() then
+              luasnip.expand_or_jump()
+            else
+              fallback()
+            end
+          end, { 'i', 's' }),
+          ['<S-Tab>'] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+              cmp.select_prev_item()
+            elseif luasnip.jumpable(-1) then
+              luasnip.jump(-1)
+            else
+              fallback()
+            end
+          end, { 'i', 's' }),
+        },
+        sources = {
+          { name = 'nvim_lsp' },
+          { name = 'luasnip' },
+          { name = "neorg" },
+        },
+      })
+    end
+  },
+
+  {
+    "folke/noice.nvim",
+    config = function()
+      require("noice").setup({
+        -- add any options here
+        routes = {
+          {
+            filter = {
+              event = 'msg_show',
+              any = {
+                { find = '%d+L, %d+B' },
+                { find = '; after #%d+' },
+                { find = '; before #%d+' },
+                { find = '%d fewer lines' },
+                { find = '%d more lines' },
+              },
+            },
+            opts = { skip = true },
+          }
+        },
+      })
+    end,
+    dependencies = {
+      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    }
+  },
+
 })

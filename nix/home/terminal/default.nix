@@ -1,11 +1,15 @@
-{pkgs, ...}:{
+{pkgs, config, ...}:{
   imports = [
     ./shell/bash.nix
     ./shell/zsh.nix
   ];
 
-	home.packages = with pkgs; [
-		starship
-		wezterm
-	];
+  home.file = {
+    ".local/scripts".source = config.lib.file.mkOutOfStoreSymlink /mnt/share/.dotfiles/scripts;
+  };
+
+  home.packages = with pkgs; [
+    starship
+      wezterm
+  ];
 }

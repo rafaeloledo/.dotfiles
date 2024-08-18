@@ -1,49 +1,12 @@
+add_newline = false
 # Sets user-defined palette
 palette = "catppuccin_mocha"
 
-format="$directory$git_branch$character"
-right_format = """$git_status$cmd_duration"""
-add_newline = false
-
-c.disabled = true
-
-[character]
-success_symbol = "[](green bold)"
-error_symbol = "[](pink)"
-vicmd_symbol = "[](peach)"
-
-[directory]
-format = "($style)[ ](bg:base fg:pink)[$path](bg:base fg:lavender bold)[ ]($style)"
-style = "blue"
-truncation_length = 3
-truncate_to_repo = false
+format="$directory$character"
+right_format = """$all"""
 
 [git_branch]
-format = "($style)[[ ](bg:base fg:green bold)$branch](bg:base fg:lavender)[ ]($style)"
-style = "bg:none fg:base"
-
-[git_status]
-# $all status$ahead_behind
-format = "($style)[$all_status$ahead_behind](bg:base fg:yellow)[ ]($style)"
-style = "bg:none fg:base"
-conflicted = "="
-ahead =	"⇡${count}"
-behind = "⇣${count}"
-diverged = "⇕⇡${ahead_count}⇣${behind_count}"
-up_to_date = "󰄬"
-untracked = "?${count}"
-stashed = "󰏖"
-modified = "!${count}"
-staged = "+${count}"
-renamed = "»${count}"
-deleted = "󰅖${count}"
-
-[cmd_duration]
-min_time = 1
-# duration & style 
-format = "($style)[[神](bg:base fg:flamingo bold)$duration](bg:base fg:text)($style)"
-disabled = false
-style = "bg:none fg:base"
+format = '[$symbol$branch(:$remote_branch)]($style)'
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"

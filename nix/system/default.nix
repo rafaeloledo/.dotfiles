@@ -8,6 +8,7 @@
   imports = [
     ./core
     ./network
+		./software
     ./hardware
     ./fonts
 		./services

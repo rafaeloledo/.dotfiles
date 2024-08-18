@@ -1,0 +1,6 @@
+require("plugins.telescope")
+require("plugins.treesitter")
+require("plugins.trouble")
+require("plugins.lsp")
+require("plugins.codesnap")
+require("plugins.catppuccin")

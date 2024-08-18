@@ -5,6 +5,7 @@
 
 {
   fonts.packages = with pkgs; [
+		roboto-mono
     noto-fonts-cjk-sans
     noto-fonts
     noto-fonts-emoji

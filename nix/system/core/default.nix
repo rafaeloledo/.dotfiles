@@ -101,12 +101,10 @@
     fish
 		zsh
     cachix
-    cudaPackages.cudatoolkit
     nvtopPackages.full
     killall
     egl-wayland
-    nvidia-vaapi-driver
-    gcc
+        gcc
     gnumake
     cmake
     wget

@@ -10,7 +10,6 @@
     ngrok
     unixtools.xxd
     fastfetch
-    docker
     staruml
     qemu_full
     libvirt
@@ -20,13 +19,15 @@
     libmtp
     jq
     chromium
-		stow
+    stow
+    lmstudio
   ];
 
   dconf.settings = {
     "org/virt-manager/virt-manager/connections" = {
-			autoconnect = ["qemu:///system"];
-			uris = ["qemu:///system"];
+      autoconnect = ["qemu:///system"];
+      uris = ["qemu:///system"];
     };
   };
 }
+

@@ -23,7 +23,7 @@ let
     "waybar"
     "yazi"
   ];
-	inherit (config.lib.file) mkOutOfStoreSymlink;
+  inherit (config.lib.file) mkOutOfStoreSymlink;
 in
 {
   imports = [
@@ -38,7 +38,7 @@ in
     stateVersion = "24.05";
   };
 
-	home.file = builtins.listToAttrs (map (name: {
+  home.file = builtins.listToAttrs (map (name: {
     name = ".config/${name}";
     value = {
       source = mkOutOfStoreSymlink "/mnt/share/.dotfiles/${name}";

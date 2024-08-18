@@ -1,5 +1,5 @@
-vim.cmd("colorscheme solarized-osaka")
-vim.opt.clipboard = "unnamedplus"
+vim.cmd("colorscheme catppuccin")
+vim.cmd("set clipboard+=unnamed,unnamedplus")
 vim.o.hlsearch = true
 vim.wo.number = true
 vim.o.relativenumber = true
