@@ -1,4 +1,4 @@
-rmdir "C:\Users\rafae\.config\wezterm" /Q
-rmdir "C:\Users\rafae\AppData\Local\nvim" /Q
-rmdir "C:\Users\rafae\.config\starship" /Q
-rmdir "C:\Users\rafae\.config\autohotkey" /Q
+rmdir "%userprofile%\.config\wezterm" /Q
+rmdir "%userprofile%\AppData\Local\nvim" /Q
+rmdir "%userprofile%\.config\starship" /Q
+rmdir "%userprofile%\.config\autohotkey" /Q
