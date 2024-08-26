@@ -1,21 +1,22 @@
-exec xrandr --output eDP-1-1 --mode 1920x1080 --rate 144.15 --dpi 96
-exec xrandr --output HDMI-0 --mode 1920x1080 --rate 119.98 --dpi 96
-# exec xrandr --output HDMI-1-0 --mode 1920x1080 --rate 119.98 --dpi 96
+# exec xrandr --output eDP-1-1 --mode 1920x1080 --rate 144.15 --dpi 96
+exec xrandr --output eDP-1 --mode 1920x1080 --rate 144.15 --dpi 96
+# exec xrandr --output HDMI-0 --mode 1920x1080 --rate 119.98 --dpi 96
+exec xrandr --output HDMI-1-0 --mode 1920x1080 --rate 119.98 --dpi 96
 exec ~/.local/scripts/randwall
 exec ~/.local/scripts/toggle_inner_display_automatically
 
-exec_always ~/.nix-profile/bin/picom -b
-exec_always ~/.nix-profile/bin/emacs --daemon
+exec_always /usr/bin/env picom -b
+exec_always /usr/bin/env emacs --daemon
 exec_always killall i3bar
 
-bindsym Mod1+Return exec wezterm
-bindsym Mod1+b exec google-chrome-stable %U --force-device-scale-factor=1
+bindsym Mod4+Return exec wezterm
+bindsym Mod4+b exec google-chrome-stable %U --force-device-scale-factor=1
 
-bindsym Mod1+q kill
-bindsym Mod1+r exec --no-startup-id rofi -show run
-bindsym Mod1+e exec --no-startup-id ~/.local/scripts/toggle thunar
+bindsym Mod4+q kill
+bindsym Mod4+r exec --no-startup-id rofi -show run
+bindsym Mod4+e exec --no-startup-id ~/.local/scripts/toggle thunar
 bindsym Mod1+w exec --no-startup-id rofi -show window
-bindsym Mod4+e exec emacsclient -c -a ""
+bindsym Mod1+e exec emacsclient -c -a ""
 bindsym Mod4+h exec ~/.local/scripts/system_information
 bindsym Mod4+p exec pavucontrol
 bindsym Mod4+m exec pamixer --source "alsa_input.usb-3142_Fifine_Microphone-00.mono-fallback" "Running" -t
@@ -31,7 +32,7 @@ bindsym Mod4+Shift+s exec ~/.local/scripts/screenshtarea
 bindsym Mod1+Shift+p exec ~/.local/scripts/select_wallpaper
 bindsym Mod1+Shift+c exec "i3-msg reload && i3-msg restart"
 bindsym Mod1+Shift+e exec i3-nagbar -t warning -m 'Do you want to exit i3?' -b 'Yes' 'i3-msg exit'
-bindsym Mod4+b exec blueman-manager
+bindsym Mod1+b exec blueman-manager
 
 bindsym Mod1+space focus mode_toggle
 
@@ -55,36 +56,36 @@ workspace_auto_back_and_forth no
 client.focused #379777 #379777 #ffffff #379777 #379777
 
 mode "resize" {
-bindsym Down resize grow height 10 px or 10 ppt
-bindsym Escape mode default
-bindsym Left resize shrink width 10 px or 10 ppt
-bindsym Return mode default
-bindsym Right resize grow width 10 px or 10 ppt
-bindsym Up resize shrink height 10 px or 10 ppt
+	bindsym Down resize grow height 10 px or 10 ppt
+	bindsym Escape mode default
+	bindsym Left resize shrink width 10 px or 10 ppt
+	bindsym Return mode default
+	bindsym Right resize grow width 10 px or 10 ppt
+	bindsym Up resize shrink height 10 px or 10 ppt
 }
 
 bar {
-mode invisible
-tray_output none
-font pango:monospace 8.000000
-mode dock
-hidden_state hide
-position bottom
-status_command /nix/store/xjmplwxd2p6kbq0lgrzl21sn8fm0kq11-i3status-2.14/bin/i3status
-i3bar_command /nix/store/x1n12l9s46pg4shai1m1a6lqkgil94jy-i3-4.23/bin/i3bar
-workspace_buttons yes
-strip_workspace_numbers no
-tray_output primary
-colors {
-background #000000
-statusline #ffffff
-separator #666666
-focused_workspace #4c7899 #285577 #ffffff
-active_workspace #333333 #5f676a #ffffff
-inactive_workspace #333333 #222222 #888888
-urgent_workspace #2f343a #900000 #ffffff
-binding_mode #2f343a #900000 #ffffff
-}
+		mode invisible
+		tray_output none
+		font pango:monospace 8.000000
+		mode dock
+		hidden_state hide
+		position bottom
+		status_command /nix/store/xjmplwxd2p6kbq0lgrzl21sn8fm0kq11-i3status-2.14/bin/i3status
+		i3bar_command /nix/store/x1n12l9s46pg4shai1m1a6lqkgil94jy-i3-4.23/bin/i3bar
+		workspace_buttons yes
+		strip_workspace_numbers no
+		tray_output primary
+		colors {
+			background #000000
+				statusline #ffffff
+				separator #666666
+				focused_workspace #4c7899 #285577 #ffffff
+				active_workspace #333333 #5f676a #ffffff
+				inactive_workspace #333333 #222222 #888888
+				urgent_workspace #2f343a #900000 #ffffff
+				binding_mode #2f343a #900000 #ffffff
+		}
 }
 
 font pango:monospace 8.000000
@@ -109,16 +110,16 @@ bindsym Mod1+Down focus down
 bindsym Mod4+Right workspace next
 bindsym Mod4+Left workspace prev
 
-bindsym Mod1+1 workspace number 1
-bindsym Mod1+2 workspace number 2
-bindsym Mod1+3 workspace number 3
-bindsym Mod1+4 workspace number 4
-bindsym Mod1+5 workspace number 5
-bindsym Mod1+6 workspace number 6
-bindsym Mod1+7 workspace number 7
-bindsym Mod1+8 workspace number 8
-bindsym Mod1+9 workspace number 9
-bindsym Mod1+0 workspace number 10
+bindsym Mod4+1 workspace number 1
+bindsym Mod4+2 workspace number 2
+bindsym Mod4+3 workspace number 3
+bindsym Mod4+4 workspace number 4
+bindsym Mod4+5 workspace number 5
+bindsym Mod4+6 workspace number 6
+bindsym Mod4+7 workspace number 7
+bindsym Mod4+8 workspace number 8
+bindsym Mod4+9 workspace number 9
+bindsym Mod4+0 workspace number 10
 
 bindsym Mod1+Shift+0 move container to workspace number 10
 bindsym Mod1+Shift+1 move container to workspace number 1
@@ -130,12 +131,3 @@ bindsym Mod1+Shift+6 move container to workspace number 6
 bindsym Mod1+Shift+7 move container to workspace number 7
 bindsym Mod1+Shift+8 move container to workspace number 8
 bindsym Mod1+Shift+9 move container to workspace number 9
-
-assign [class="chrome"] 1
-assign [class="Brave"] 1
-assign [class="Firefox"] 1
-assign [class="Emacs"] 2
-assign [class="Thunar"] 4
-assign [class="discord"] 7
-assign [class="NoiseTorch"] 8
-assign [class="obs"] 9

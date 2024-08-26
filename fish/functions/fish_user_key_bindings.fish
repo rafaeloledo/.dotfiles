@@ -1,9 +1,10 @@
 function fish_user_key_bindings
-    # peco
-    # bind \cr peco_select_history
     bind \cf tmux-sessionizer
     # vim like
     bind \el forward-char
+    #bind \; 'echo -e "\n"; ll; commandline -f repaint'
+    #bind \' 'echo -e "\n"; lt; commandline -f repaint'
+    bind \cd 'commandline cd '
 
     bind \co yazi
     bind \cd delete-char

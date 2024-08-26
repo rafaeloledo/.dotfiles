@@ -23,20 +23,13 @@ alias ll "eza -lga --icons"
 alias l "eza -lga --icons"
 alias lt "eza --tree"
 alias cls "clear"
-
-command -qv neofetch && alias nf neofetch
-command -qv nvim && alias v nvim
-
-if type -q tmux
-  alias t tmux
-  alias ta "tmux a"
-  alias td "tmux detach"
-end
-
-
-if type -q bat
-  alias cat "bat -p"
-end
+alias phone "scrcpy --disabel-screensaver --turn-screen-off --no-audio-playback -f"
+alias nf neofetch
+alias v nvim
+alias t tmux
+alias ta "tmux a"
+alias td "tmux detach"
+alias cat "bat -p"
 
 # exporting PATHs
 # set -gx PATH /home/rgnh55/.local/share/nvim/mason/bin $PATH 2>/dev/null
@@ -50,11 +43,6 @@ set -gx PATH ~/.cargo/bin $PATH 2> /dev/null
 set -gx PATH $ANDROID_HOME/emulator $PATH 2>/dev/null
 set -gx PATH $ANDROID_HOME/platform-tools $PATH 2>/dev/null
 set -gx PATH ~/.nix-profile/bin $PATH 2>/dev/null
-
-set LOCAL_CONFIG (dirname (status --current-filename))/config-local.fish
-if test -f $LOCAL_CONFIG
-  source $LOCAL_CONFIG
-end
 
 zoxide init fish | source
 starship init fish | source
