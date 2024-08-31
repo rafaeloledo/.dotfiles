@@ -22,7 +22,6 @@ let
     "viewnior"
     "waybar"
     "yazi"
-    "zshrc"
   ];
   inherit (config.lib.file) mkOutOfStoreSymlink;
 in

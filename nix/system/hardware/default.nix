@@ -3,31 +3,32 @@
 { 
   imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
-  fileSystems."/" =
-  {
-    device = "/dev/disk/by-uuid/57bf9c8d-322a-4479-b1da-1d82d69ef2df";
-    fsType = "ext4"; 
-  };
+fileSystems."/" =
+    { device = "/dev/disk/by-uuid/5171a467-978f-4561-880f-08759fe5fe62";
+      fsType = "ext4";
+    };
+
   fileSystems."/boot" =
-  {
-    device = "/dev/disk/by-uuid/7EB6-C7D5";
-    fsType = "vfat";
-    options = [ "fmask=0022" "dmask=0022" ];
-  };
+    { device = "/dev/disk/by-uuid/1EA9-232F";
+      fsType = "vfat";
+      options = [ "fmask=0077" "dmask=0077" ];
+    };
+
+
   fileSystems."/mnt/share" =
   {
-    device = "/dev/disk/by-uuid/9df36583-2709-4e1c-ae2d-104607c98528";
+    device = "/dev/sda1";
     fsType = "ext4";
   };
   fileSystems."/mnt/share1" = {
-    device = "/dev/disk/by-uuid/1a6f4a0a-6af6-4c29-b69e-34a6738a420f";
+    device = "/dev/sdb1";
     fsType = "ext4";
   };
 
   swapDevices = [ ];
 
   hardware = {
-    #pulseaudio.enable = true;
+    pulseaudio.enable = false;
     graphics.enable = true;
 		bluetooth.enable = true;
 		bluetooth.powerOnBoot = true;

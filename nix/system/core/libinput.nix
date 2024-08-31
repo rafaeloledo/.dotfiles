@@ -2,10 +2,10 @@
 
 {
   services = {
-    displayManager.sddm.enable = true;
-    desktopManager.plasma6.enable = true;
     openssh.enable = true;
     xserver = {
+	    displayManager.gdm.enable = true;
+	    desktopManager.gnome.enable = true;
       enable = true;
       windowManager.i3.enable = true;
       xkb.layout = "us,br";

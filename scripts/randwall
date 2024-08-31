@@ -1,6 +1,6 @@
 # vim: ft=sh
 
-image_dir=~/wallpapers/
+image_dir=/mnt/share/.dotfiles/wallpapers/
 random_image=$(find "$image_dir" -type f -name '*.png' -o -name '*.jpg' | shuf -n 1)
 
 if [ -n "$random_image" ]; then

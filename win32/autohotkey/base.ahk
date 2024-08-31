@@ -22,7 +22,11 @@ WinActive("ahk_exe msedge.exe") or
 WinActive("ahk_exe chrome.exe") or
 WinActive("ahk_exe League of Legends.exe") or 
 WinActive("ahk_exe LeagueClientUx.exe") or
-WinActive("ahk_exe Obsidian.exe"))
+WinActive("ahk_exe Obsidian.exe") or
+WinActive("ahk_exe Neovide.exe") or
+WinActive("ahk_exe wezterm-gui.exe") or
+WinActive("ahk_exe wezterm.exe")
+)
 	^d::Send "{PgDn}"
 	^u::Send "{PgUp}"
 	^w::^Backspace

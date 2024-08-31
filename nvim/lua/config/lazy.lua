@@ -36,17 +36,17 @@ require("lazy").setup({
 
   { "windwp/nvim-autopairs", event = "InsertEnter", config = true },
 
-  {
-    "epwalsh/obsidian.nvim",
-    opts = {
-      workspaces = {
-	{
-	  name = "personal",
-	  path = "/mnt/share/anotacoes",
-	},
-      },
-    },
-  },
+	--  {
+	--    "epwalsh/obsidian.nvim",
+	--    opts = {
+	--      workspaces = {
+	-- {
+	--   name = "personal",
+	--   path = "/mnt/share/anotacoes",
+	-- },
+	--      },
+	--    },
+	--  },
 
   {
     "nvim-tree/nvim-tree.lua",
@@ -76,10 +76,10 @@ require("lazy").setup({
     end
   },
 
-  {
-    "mistricky/codesnap.nvim",
-    build = "make",
-  },
+  -- {
+  --   "mistricky/codesnap.nvim",
+  --   build = "make",
+  -- },
 
   'ThePrimeagen/git-worktree.nvim',
 
