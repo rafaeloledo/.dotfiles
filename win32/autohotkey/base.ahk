@@ -1,4 +1,4 @@
-; ^: ctrl, !: alt, +: shift
+; ^: ctrl, !: alt, +: shift, #: super/windows
 ^+/::Send "{/}"
 !/::Send "{?}"
 !PgDn::Send "{End}"
@@ -7,6 +7,12 @@
 +!PgUp::Send "+{Home}"
 ; CapsLock::LCtrl
 !q::!F4
+
+#e:: {
+	RunWait "taskkill /F /IM explorer.exe"
+	Run "explorer.exe"
+	return
+}
 
 #HotIf not (WinActive("ahk_exe League of Legends.exe") or
 WinActive("ahk_exe LeagueClientUx.exe"))
