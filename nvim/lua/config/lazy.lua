@@ -36,17 +36,17 @@ require("lazy").setup({
 
   { "windwp/nvim-autopairs", event = "InsertEnter", config = true },
 
-	--  {
-	--    "epwalsh/obsidian.nvim",
-	--    opts = {
-	--      workspaces = {
-	-- {
-	--   name = "personal",
-	--   path = "/mnt/share/anotacoes",
-	-- },
-	--      },
-	--    },
-	--  },
+  {
+    "epwalsh/obsidian.nvim",
+    opts = {
+      workspaces = {
+        {
+          name = "personal",
+          path = "D:\\anotacoes",
+        },
+      },
+    },
+  },
 
   {
     "nvim-tree/nvim-tree.lua",
@@ -76,10 +76,13 @@ require("lazy").setup({
     end
   },
 
-  -- {
-  --   "mistricky/codesnap.nvim",
-  --   build = "make",
-  -- },
+  {
+    "mistricky/codesnap.nvim",
+    enabled = false,
+    pin = true,
+    tag = "v0.0.11",
+    build = "make",
+  },
 
   'ThePrimeagen/git-worktree.nvim',
 
@@ -112,7 +115,6 @@ require("lazy").setup({
     }
   },
 
-  "tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
   "lewis6991/gitsigns.nvim",
 
   { -- Autocompletion
@@ -171,35 +173,6 @@ require("lazy").setup({
         },
       })
     end
-  },
-
-  {
-    "folke/noice.nvim",
-    config = function()
-      require("noice").setup({
-        -- add any options here
-        routes = {
-          {
-            filter = {
-              event = 'msg_show',
-              any = {
-                { find = '%d+L, %d+B' },
-                { find = '; after #%d+' },
-                { find = '; before #%d+' },
-                { find = '%d fewer lines' },
-                { find = '%d more lines' },
-              },
-            },
-            opts = { skip = true },
-          }
-        },
-      })
-    end,
-    dependencies = {
-      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-      "MunifTanjim/nui.nvim",
-      "rcarriga/nvim-notify",
-    }
   },
 
 })

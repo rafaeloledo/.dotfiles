@@ -14,6 +14,8 @@ return {
   color_scheme = "Catppuccin Mocha",
   window_background_opacity = 0.9,
   enable_scroll_bar = false,
+  initial_cols = 119,
+  initial_rows = 36,
   default_cursor_style = "SteadyBar",
   default_prog = { "C:\\dev\\scoop\\apps\\pwsh\\current\\pwsh.exe", "-nologo" },
   automatically_reload_config = true,

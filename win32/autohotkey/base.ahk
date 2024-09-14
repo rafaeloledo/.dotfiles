@@ -5,12 +5,32 @@
 +!PgDn::Send "+{End}"
 !PgUp::Send "{Home}"
 +!PgUp::Send "+{Home}"
-; CapsLock::LCtrl
-!q::!F4
+CapsLock::LCtrl
+#q::!F4
 
-#e:: {
+!e:: {
 	RunWait "taskkill /F /IM explorer.exe"
 	Run "explorer.exe"
+	return
+}
+
+#Enter:: {
+	Run "wezterm-gui.exe"
+	return
+}
+
+#o:: {
+	Run "Obsidian.exe"
+	return
+}
+
+#n:: {
+	Run "v.exe"
+	return
+}
+
+#m:: {
+	Run "soundvolumeview.exe /Switch 2- Fifine Microphone"
 	return
 }
 
@@ -42,8 +62,8 @@ WinActive("ahk_exe wezterm.exe")
 
 #HotIf not (WinActive("ahk_exe League of Legends.exe") or
 WinActive("ahk_exe WindowsTerminal.exe"))
-	!1::SendEvent "{LWin down}{LCtrl down}{Left down}{LWin up}{LCtrl up}{Left up}"
-	!2::SendEvent "{LWin down}{LCtrl down}{Right down}{LWin up}{LCtrl up}{Right up}"
+	#1::SendEvent "{LWin down}{LCtrl down}{Left down}{LWin up}{LCtrl up}{Left up}"
+	#2::SendEvent "{LWin down}{LCtrl down}{Right down}{LWin up}{LCtrl up}{Right up}"
 #HotIf
 
 #HotIf WinActive("ahk_exe League of Legends.exe")
