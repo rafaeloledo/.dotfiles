@@ -96,16 +96,35 @@ WinActive("ahk_exe brave.exe")
 #HotIf
 
 #HotIf WinActive("ahk_exe ELEMENTCLIENT.exe")
-F2:: {
+
+!3:: {
   Loop {
-    SendEvent "{F2}"
-    Sleep 100
+    SendEvent "{F3}"
+    Sleep 300
     if GetKeyState("Esc", "P")
       Break
   }
 }
-`:: {
+
+!s:: {
   SendEvent "{Alt down}{Esc down}{Alt up}{Esc up}"
-  Click "Right"
+	Click "Right"
 }
+
+!1:: {
+	SendEvent "{F1}"
+}
+
+!2:: {
+	SendEvent "{F2}"
+}
+
+!4:: {
+	SendEvent "{F4}"
+}
+
+!A:: {
+	SendEvent "{F12}"
+}
+
 #HotIf
