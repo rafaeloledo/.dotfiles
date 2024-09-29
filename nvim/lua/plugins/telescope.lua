@@ -40,9 +40,9 @@ telescope.setup {
 local set = vim.keymap.set
 local builtin = require('telescope.builtin')
 
-set('n', '<leader>sf', builtin.find_files)
-set('n', '<leader>sb', builtin.buffers)
-set('n', '<leader>sd', builtin.diagnostics)
-set('n', '<leader>sw', builtin.grep_string)
-set('n', '<leader>sg', builtin.live_grep)
-set('n', '<leader>sS', builtin.git_status)
+set('n', ';f', builtin.find_files)
+set('n', ';b', builtin.buffers)
+set('n', ';d', builtin.diagnostics)
+set('n', ';w', builtin.grep_string)
+set('n', ';r', builtin.live_grep)
+set('n', ';s', builtin.git_status)

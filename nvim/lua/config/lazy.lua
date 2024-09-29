@@ -42,7 +42,7 @@ require("lazy").setup({
       workspaces = {
         {
           name = "personal",
-          path = "D:\\anotacoes",
+          path = "C:\\dev\\anotacoes",
         },
       },
     },
