@@ -6,7 +6,10 @@
 !PgUp::Send "{Home}"
 +!PgUp::Send "+{Home}"
 CapsLock::LCtrl
-#q::!F4
+
+#q:: {
+	RunWait "taskkill /F /PID " WinGetPID("A")
+}
 
 !e:: {
 	RunWait "taskkill /F /IM explorer.exe"
@@ -100,15 +103,50 @@ WinActive("ahk_exe brave.exe")
 !3:: {
   Loop {
     SendEvent "{F3}"
-    Sleep 300
+    Sleep 100
     if GetKeyState("Esc", "P")
       Break
   }
 }
 
-!s:: {
+`:: {
   SendEvent "{Alt down}{Esc down}{Alt up}{Esc up}"
 	Click "Right"
+}
+
++LButton:: {
+	Click "Left"
+	Click "Left"
+}
+
+!D::{
+	SendEvent "{l}{l}{F1}{F2}{F3}{F4}{F5}{F6}{F7}{F8}{l}"
+	Sleep 30
+	SendEvent "{``}{``}{7}{8}{9}{``}"
+}
+
+!A::{
+	SendEvent "{l}{F1}{F2}{F3}{F4}{F5}{F6}{F7}{F8}{l}{l}"
+	Sleep 30
+	SendEvent "{``}{7}{8}{9}{``}{``}"
+}
+
+!I:: {
+	Loop 10 {
+		SendEvent "{Alt down}{Esc down}{Alt up}{Esc up}"
+		Click "Right"
+		Sleep 130
+		SendEvent "{1}"
+	}
+}
+
+!R:: {
+	Loop 10 {
+		SendEvent "{Alt down}{Esc down}{Alt up}{Esc up}"
+		Click "Right"
+		Sleep 130
+		SendEvent "{F12}"
+	}
 }
 
 !1:: {
@@ -123,7 +161,7 @@ WinActive("ahk_exe brave.exe")
 	SendEvent "{F4}"
 }
 
-!A:: {
+!C:: {
 	SendEvent "{F12}"
 }
 
