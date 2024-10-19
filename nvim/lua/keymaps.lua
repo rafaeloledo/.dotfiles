@@ -1,5 +1,5 @@
 -- open nvimtree with ff in normal mode
-vim.keymap.set("n", "ff", ":NvimTreeToggle<CR>", { silent = true })
+vim.keymap.set("n", "sf", ":Ex<CR>", { silent = true })
 
 -- i don't know if i'm using this
 vim.keymap.set("n", "QQ", ":q!<CR>", { silent = true })
@@ -18,6 +18,19 @@ vim.keymap.set("n", "th", ":bprev<enter>", { silent = true })
 vim.keymap.set("n", "tj", ":bfirst<enter>", { silent = true })
 vim.keymap.set("n", "tk", ":blast<enter>", { silent = true })
 vim.keymap.set("n", "tl", ":bnext<enter>", { silent = true })
+
+-- shorthands for splitting
+vim.keymap.set("n", "ss", "<C-w>s")
+vim.keymap.set("n", "sv", "<C-w>v")
+
+-- Select all
+vim.keymap.set("n", "<C-a>", "gg<S-v>G")
+
+-- Move between windows
+vim.keymap.set("n", "sh", "<C-w>h")
+vim.keymap.set("n", "sk", "<C-w>k")
+vim.keymap.set("n", "sj", "<C-w>j")
+vim.keymap.set("n", "sl", "<C-w>l")
 
 -- delete current buffer
 vim.keymap.set("n", "td", ":bdelete<enter>", { silent = true })

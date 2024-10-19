@@ -49,7 +49,7 @@ require('mason').setup()
 
 -- Enable the following language servers
 -- Feel free to add/remove any LSPs that you want here. They will automatically be installed
-local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver', 'gopls'  }
+local servers = { 'clangd', 'rust_analyzer', 'pyright', 'ts_ls', 'gopls', 'csharp_ls' }
 
 -- Ensure the servers above are installed
 require('mason-lspconfig').setup {

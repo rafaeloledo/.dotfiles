@@ -33,6 +33,7 @@ require("lazy").setup({
   { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make', cond = vim.fn.executable 'make' == 1 },
 
   { "catppuccin/nvim", name = "catppuccin" },
+	{ "craftzdog/solarized-osaka.nvim", lazy = false },
 
   { "windwp/nvim-autopairs", event = "InsertEnter", config = true },
 
@@ -50,6 +51,7 @@ require("lazy").setup({
 
   {
     "nvim-tree/nvim-tree.lua",
+		enabled = false,
     config = function()
       require("nvim-tree").setup()
     end,
