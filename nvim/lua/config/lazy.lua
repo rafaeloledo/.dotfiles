@@ -21,8 +21,9 @@ require("lazy").setup({
   -- plugins list -- 
   "xiyaowong/transparent.nvim",
   "nvim-lua/plenary.nvim",
-  "sindrets/diffview.nvim", 
+  "sindrets/diffview.nvim",
   "hrsh7th/nvim-cmp",
+	"akinsho/bufferline.nvim",
   "NeogitOrg/neogit",
   "nvim-tree/nvim-web-devicons",
   "onsails/lspkind.nvim",
