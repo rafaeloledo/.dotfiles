@@ -5,13 +5,13 @@ vim.g.neovide_padding_top = 0
 vim.g.neovide_padding_bottom = 0
 vim.g.neovide_padding_right = 0
 vim.g.neovide_padding_left = 0
-vim.g.neovide_transparency = 0.9
+vim.g.neovide_transparency = 1
 vim.g.neovide_position_animation_length = 0
 vim.g.neovide_scroll_animation_length = 0
 vim.g.neovide_scroll_animation_far_lines = 0
 vim.g.neovide_hide_mouse_when_typing = true
 vim.g.neovide_refresh_rate = 144
-vim.g.neovide_fullscreen = false
+vim.g.neovide_fullscreen = true
 vim.g.neovide_cursor_animation_length = 0
 vim.g.neovide_cursor_trail_size = 0
 vim.g.neovide_cursor_antialiasing = true
@@ -34,6 +34,7 @@ vim.o.updatetime = 250
 vim.opt.swapfile = false
 
 vim.cmd('set shada="NONE"')
+vim.cmd('set nowrap')
 vim.opt.fillchars = { eob = " " }
 
 vim.cmd('set fileformats=unix,dos')

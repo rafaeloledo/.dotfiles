@@ -20,6 +20,7 @@ vim.g.maplocalleader = " "
 require("lazy").setup({
   -- plugins list -- 
   "xiyaowong/transparent.nvim",
+  "Shatur/neovim-session-manager",
   "nvim-lua/plenary.nvim",
   "sindrets/diffview.nvim",
   "hrsh7th/nvim-cmp",
@@ -28,6 +29,7 @@ require("lazy").setup({
   "nvim-tree/nvim-web-devicons",
   "onsails/lspkind.nvim",
   "tpope/vim-surround",
+	"nvim-telescope/telescope-file-browser.nvim",
 
   "nvim-telescope/telescope-symbols.nvim",
   { "nvim-telescope/telescope.nvim", branch = "master" }, -- to acess preview scrolling left and right

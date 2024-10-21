@@ -1,8 +1,5 @@
--- open nvimtree with ff in normal mode
-vim.keymap.set("n", "sf", ":Ex<CR>", { silent = true })
-
 -- i don't know if i'm using this
-vim.keymap.set("n", "QQ", ":q!<CR>", { silent = true })
+vim.keymap.set("n", "QQ", ":qa<CR>", { silent = true })
 vim.keymap.set("n", "WW", ":w!<CR>", { silent = true })
 vim.keymap.set("n", "TT", ":TransparentToggle<CR>", {noremap=true})
 
@@ -41,3 +38,6 @@ vim.keymap.set("n", "<C-w>.", ":vertical resize +10<CR>", { silent = true })
 
 -- reload config doom emacs style
 vim.keymap.set("n", "<leader>hrr", ":! home-manager switch --flake /mnt/share/.dotfiles/nix --impure 1>/dev/null 2>&1 <cr>", { silent = true })
+
+vim.keymap.set("n", "<leader>ls", ":SessionManager load_session<CR>")
+vim.keymap.set("n", "<leader>ss", ":SessionManager save_current_session<CR>")

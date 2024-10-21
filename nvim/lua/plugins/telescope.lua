@@ -1,26 +1,18 @@
 require('telescope').load_extension('git_worktree')
 
 local telescope = require('telescope')
+local actions = require("telescope.actions")
+local fb_actions = require("telescope").extensions.file_browser.actions
 
 telescope.setup {
 	defaults = {
 		layout_strategy = "horizontal",
 		layout_config = {
-			preview_width = 0.65,     
-			horizontal = {
-				width = 0.99,
-				height = 0.99,
-				size = {
-					width = "100%",
-					height = "100%",
-				},
-			},
+			prompt_position = "top",
 		},
-		pickers = {
-			find_files = {
-				theme = "dropdown",
-			}
-		},
+		wrap_results = true,
+		sorting_strategy = "ascending",
+		winblend = 0,
 		mappings = {
 			i = {
 				['<C-u>'] = false,
@@ -35,6 +27,47 @@ telescope.setup {
 			}
 		},
 	},
+	pickers = {
+		diagnostics = {
+			theme = "ivy",
+			initial_mode = "normal",
+			layout_config = {
+				preview_cutoff = 9999,
+			},
+		},
+		find_files = {
+			theme = "dropdown",
+		}
+	},
+	extensions = {
+		file_browser = {
+			theme = "dropdown",
+			hijack_netrw = true,
+			mappings = {
+				-- your custom insert mode mappings
+				["n"] = {
+					-- your custom normal mode mappings
+					["N"] = fb_actions.create,
+					["h"] = fb_actions.goto_parent_dir,
+					["/"] = function()
+						vim.cmd("startinsert")
+					end,
+					["<C-u>"] = function(prompt_bufnr)
+						for i = 1, 10 do
+							actions.move_selection_previous(prompt_bufnr)
+						end
+					end,
+					["<C-d>"] = function(prompt_bufnr)
+						for i = 1, 10 do
+							actions.move_selection_next(prompt_bufnr)
+						end
+					end,
+					["<PageUp>"] = actions.preview_scrolling_up,
+					["<PageDown>"] = actions.preview_scrolling_down,
+				},
+			},
+		},
+	},
 }
 
 local set = vim.keymap.set
@@ -46,3 +79,24 @@ set('n', ';d', builtin.diagnostics)
 set('n', ';w', builtin.grep_string)
 set('n', ';r', builtin.live_grep)
 set('n', ';s', builtin.git_status)
+
+require("telescope").load_extension "file_browser"
+
+vim.keymap.set("n", "sf", function()
+	local telescope = require("telescope")
+
+	local function telescope_buffer_dir()
+		return vim.fn.expand("%:p:h")
+	end
+
+	telescope.extensions.file_browser.file_browser({
+		path = "%:p:h",
+		cwd = telescope_buffer_dir(),
+		respect_gitignore = false,
+		hidden = true,
+		grouped = true,
+		previwer = false,
+		initial_mode = "normal",
+		layout_config = { height = 40 }
+	})
+end)
