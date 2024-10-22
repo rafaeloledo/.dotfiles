@@ -7,34 +7,48 @@
 +!PgUp::Send "+{Home}"
 CapsLock::LCtrl
 
+#=::{
+	SendEvent "{Volume_Up}"
+}
+
+#-::{
+	SendEvent "{Volume_Down}"
+}
+
+!R:: {
+	; power toys run
+	SendEvent "{LAlt}{Space}"
+}
+
+#c:: {
+	RunWait "C:\dev\scoop\apps\scrcpy\current\scrcpy-noconsole.vbs --disable-screensaver --turn-screen-off"
+}
+
 #q:: {
-	RunWait "taskkill /F /PID " WinGetPID("A")
+	; kill process
+	RunWait "wscript C:\dev\.dotfiles\win32\kill-process.vbs " WinGetPID("A")
 }
 
 !e:: {
+	; restart explorer
 	RunWait "taskkill /F /IM explorer.exe"
 	Run "explorer.exe"
-	return
 }
 
 #Enter:: {
-	Run "wezterm-gui.exe"
-	return
+	Run "C:\dev\scoop\apps\wezterm\current\wezterm-gui.exe"
 }
 
 #o:: {
-	Run "Obsidian.exe"
-	return
+	Run "C:\dev\scoop\apps\obsidian\current\Obsidian.exe"
 }
 
 #n:: {
-	Run "v.exe"
-	return
+	Run "C:\dev\scoop\apps\neovide\current\neovide.exe"
 }
 
 #m:: {
 	Run "soundvolumeview.exe /Switch 2- Fifine Microphone"
-	return
 }
 
 #HotIf not (WinActive("ahk_exe League of Legends.exe") or
@@ -54,7 +68,8 @@ WinActive("ahk_exe LeagueClientUx.exe") or
 WinActive("ahk_exe Obsidian.exe") or
 WinActive("ahk_exe Neovide.exe") or
 WinActive("ahk_exe wezterm-gui.exe") or
-WinActive("ahk_exe wezterm.exe")
+WinActive("ahk_exe wezterm.exe") or
+WinActive("ahk_exe explorer.exe")
 )
 	^d::Send "{PgDn}"
 	^u::Send "{PgUp}"
