@@ -2,17 +2,23 @@ local wezterm = require 'wezterm'
 local mux = wezterm.mux
 
 wezterm.on('gui-startup', function(cmd)
-  local tab, pane, window = mux.spawn_window(cmd or {})
-  window:gui_window():toggle_fullscreen()
+	local screen = wezterm.gui.screens().main
+	local ratio = 0.7
+	local width, height = screen.width * ratio, screen.height * ratio
+	local tab, pane, window = wezterm.mux.spawn_window(cmd or {
+		position = { x = (screen.width - width) / 2, y = (screen.height - height) / 2},
+	})
+
+	window:gui_window():set_inner_size(width, height)
 end)
 
 return {
-  -- enable_tab_bar = false, -- toggle comment if want it
+  enable_tab_bar = false, -- toggle comment if want it
   enable_wayland = false,
   font_size = 14,
   font = wezterm.font('Roboto Mono'), -- i didn't have trouble in termux
-  color_scheme = "Catppuccin Mocha",
-  window_background_opacity = 0.9,
+  color_scheme = "Solarized Dark - Patched",
+  window_background_opacity = 1,
   enable_scroll_bar = false,
   initial_cols = 119,
   initial_rows = 36,
