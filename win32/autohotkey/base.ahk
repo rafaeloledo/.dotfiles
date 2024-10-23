@@ -7,6 +7,11 @@
 +!PgUp::Send "+{Home}"
 CapsLock::LCtrl
 
+#k:: {
+	; switch kbds
+	SendEvent "{LWin down}{Space down}{Space up}{LWin up}"
+}
+
 #=::{
 	SendEvent "{Volume_Up}"
 }
@@ -17,7 +22,7 @@ CapsLock::LCtrl
 
 !R:: {
 	; power toys run
-	SendEvent "{LAlt}{Space}"
+	SendEvent "{Alt down}{Space down}{Space up}{Alt up}"
 }
 
 #c:: {
