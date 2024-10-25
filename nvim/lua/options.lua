@@ -1,22 +1,24 @@
--- Neovide
-
-vim.g.neovide_scale_factor = 1.0
+--- Neovide
+vim.g.neovide_scale_factor = 1
 vim.g.neovide_padding_top = 0
 vim.g.neovide_padding_bottom = 0
 vim.g.neovide_padding_right = 0
 vim.g.neovide_padding_left = 0
-vim.g.neovide_transparency = 1
-vim.g.neovide_position_animation_length = 0
-vim.g.neovide_scroll_animation_length = 0
-vim.g.neovide_scroll_animation_far_lines = 0
+vim.g.neovide_transparency = 0.9
+vim.g.neovide_position_animation_length = 0.13
+vim.g.neovide_scroll_animation_length = 0.09
+vim.g.neovide_scroll_animation_far_lines = 0.09
 vim.g.neovide_hide_mouse_when_typing = true
 vim.g.neovide_refresh_rate = 144
-vim.g.neovide_fullscreen = true
-vim.g.neovide_cursor_animation_length = 0
-vim.g.neovide_cursor_trail_size = 0
+vim.g.neovide_fullscreen = false
+vim.g.neovide_cursor_animation_length = 0.09
+vim.g.neovide_cursor_trail_size = 0.3
 vim.g.neovide_cursor_antialiasing = true
-vim.g.neovide_cursor_animate_in_insert_mode = false
-vim.g.neovide_cursor_animate_command_line = false
+vim.o.guifont = "Roboto Mono:h14"
+vim.g.neovide_cursor_animate_in_insert_mode = true
+vim.g.neovide_cursor_animate_command_line = true
+vim.g.neovide_cursor_vfx_mode = "torpedo"
+---
 
 vim.cmd("colorscheme solarized-osaka")
 vim.cmd("set clipboard+=unnamed,unnamedplus")

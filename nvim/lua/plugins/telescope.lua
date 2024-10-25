@@ -35,9 +35,6 @@ telescope.setup {
 				preview_cutoff = 9999,
 			},
 		},
-		find_files = {
-			theme = "dropdown",
-		}
 	},
 	extensions = {
 		file_browser = {
@@ -73,12 +70,15 @@ telescope.setup {
 local set = vim.keymap.set
 local builtin = require('telescope.builtin')
 
-set('n', ';f', builtin.find_files)
-set('n', ';b', builtin.buffers)
-set('n', ';d', builtin.diagnostics)
-set('n', ';w', builtin.grep_string)
-set('n', ';r', builtin.live_grep)
-set('n', ';s', builtin.git_status)
+-- decided to change from ; to <leader> and ^ solutions
+-- the problem is when i switch to ABNT2 Portuguese kbd the key position is different
+-- if i use ^ and <leader>, i can be more ubiquous when switching kbd layouts
+set('n', '<C-p>', builtin.find_files)
+set('n', '<leader>sb', builtin.buffers)
+set('n', '<leader>sd', builtin.diagnostics)
+set('n', '<leader>sw', builtin.grep_string)
+set('n', '<C-s>', builtin.live_grep)
+set('n', '<leader>gs', builtin.git_status)
 
 require("telescope").load_extension "file_browser"
 

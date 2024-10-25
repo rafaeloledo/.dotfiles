@@ -21,6 +21,7 @@ require("lazy").setup({
   -- plugins list -- 
   "xiyaowong/transparent.nvim",
   "Shatur/neovim-session-manager",
+	"akinsho/toggleterm.nvim",
   "nvim-lua/plenary.nvim",
   "sindrets/diffview.nvim",
   "hrsh7th/nvim-cmp",
@@ -50,14 +51,6 @@ require("lazy").setup({
         },
       },
     },
-  },
-
-  {
-    "nvim-tree/nvim-tree.lua",
-		enabled = false,
-    config = function()
-      require("nvim-tree").setup()
-    end,
   },
 
   'nvim-treesitter/nvim-treesitter-textobjects',
