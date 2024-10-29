@@ -7,6 +7,10 @@
 +!PgUp::Send "+{Home}"
 CapsLock::LCtrl
 
+!`::{
+	SendEvent "{Alt down}{Esc down}{Esc up}{Alt up}"
+}
+
 #k:: {
 	; switch kbds
 	SendEvent "{LWin down}{Space down}{Space up}{LWin up}"
@@ -64,25 +68,6 @@ WinActive("ahk_exe LeagueClientUx.exe"))
 	!l::SendEvent "{Right}"
 #HotIf
 
-#HotIf not (WinActive("ahk_exe WindowsTerminal.exe") or 
-WinActive("ahk_exe firefox.exe") or
-WinActive("ahk_exe msedge.exe") or
-WinActive("ahk_exe chrome.exe") or
-WinActive("ahk_exe League of Legends.exe") or 
-WinActive("ahk_exe LeagueClientUx.exe") or
-WinActive("ahk_exe Obsidian.exe") or
-WinActive("ahk_exe Neovide.exe") or
-WinActive("ahk_exe wezterm-gui.exe") or
-WinActive("ahk_exe wezterm.exe") or
-WinActive("ahk_exe explorer.exe")
-)
-	^d::Send "{PgDn}"
-	^u::Send "{PgUp}"
-	^w::^Backspace
-	^p::SendEvent "{Up down}{Up up}"
-	^n::SendEvent "{Down down}{Down up}"
-#HotIf
-
 #HotIf not (WinActive("ahk_exe League of Legends.exe") or
 WinActive("ahk_exe WindowsTerminal.exe"))
 	#1::SendEvent "{LWin down}{LCtrl down}{Left down}{LWin up}{LCtrl up}{Left up}"
@@ -98,8 +83,8 @@ WinActive("ahk_exe WindowsTerminal.exe"))
 
 #HotIf WinActive("ahk_exe devenv.exe") or
 WinActive("ahk_exe Code.exe")
-	#!5::F5
-	!5::^F5
+	^+R::SendEvent "{F5}"
+	^R::SendEvent "{Ctrl down}{F5}{Ctrl up}"
 #HotIf
 
 #HotIf WinActive("ahk_exe chrome.exe") or
