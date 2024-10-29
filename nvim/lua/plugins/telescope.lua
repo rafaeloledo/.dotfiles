@@ -73,16 +73,16 @@ local builtin = require('telescope.builtin')
 -- decided to change from ; to <leader> and ^ solutions
 -- the problem is when i switch to ABNT2 Portuguese kbd the key position is different
 -- if i use ^ and <leader>, i can be more ubiquous when switching kbd layouts
-set('n', '<C-p>', builtin.find_files)
+set('n', '<leader>sp', builtin.find_files)
 set('n', '<leader>sb', builtin.buffers)
 set('n', '<leader>sd', builtin.diagnostics)
 set('n', '<leader>sw', builtin.grep_string)
-set('n', '<C-s>', builtin.live_grep)
+set('n', '<leader>sg', builtin.live_grep)
 set('n', '<leader>gs', builtin.git_status)
 
 require("telescope").load_extension "file_browser"
 
-vim.keymap.set("n", "sf", function()
+vim.keymap.set("n", "sp", function()
 	local telescope = require("telescope")
 
 	local function telescope_buffer_dir()
