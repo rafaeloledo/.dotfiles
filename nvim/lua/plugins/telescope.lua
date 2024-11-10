@@ -80,7 +80,7 @@ set('n', '<leader>gs', builtin.git_status)
 
 require("telescope").load_extension "file_browser"
 
-vim.keymap.set("n", "sp", function()
+vim.keymap.set("n", "sf", function()
 	local telescope = require("telescope")
 
 	local function telescope_buffer_dir()

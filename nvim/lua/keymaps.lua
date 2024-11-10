@@ -4,8 +4,8 @@ vim.keymap.set("n", "WW", ":w!<CR>", { silent = true })
 vim.keymap.set("n", "TT", ":TransparentToggle<CR>", {noremap=true})
 
 -- while in normal mode and not in visual
-vim.keymap.set("n", "E", "$", { silent = true })
-vim.keymap.set("n", "B", "^", { silent = true })
+vim.keymap.set("n", "H", "^", { silent = true })
+vim.keymap.set("n", "L", "$", { silent = true })
 
 -- show messages
 vim.keymap.set('n', 'MM', ':messages<cr>')
@@ -23,6 +23,7 @@ vim.keymap.set("n", "sv", "<C-w>v")
 -- Select all, also yanks and back to the cursor original position
 -- the reason is that i only use this shortcut to yank all, so, may i copy it straight?
 vim.keymap.set("n", "<C-a>", "gg<S-v>Gy<Esc><C-o><C-o>", { silent = true })
+vim.keymap.set("n", "<C-S-a>", "gg<S-v>Gd<Esc><C-o><C-o>", { silent = true })
 
 -- Move between windows
 vim.keymap.set("n", "sh", "<C-w>h")
@@ -38,9 +39,12 @@ vim.keymap.set("n", "<C-w>,", ":vertical resize -10<CR>", { silent = true })
 vim.keymap.set("n", "<C-w>.", ":vertical resize +10<CR>", { silent = true })
 
 -- reload config doom emacs style
-vim.keymap.set("n", "<leader>hrr", ":!home-manager switch --flake /mnt/share/.dotfiles/nix --impure 1>/dev/null 2>&1 <cr>", { silent = true })
+vim.keymap.set("n", "<leader>hrr", ":silent !home-manager switch --flake /mnt/share/.dotfiles/nix --impure 1>/dev/null 2>&1 <cr>", { silent = true })
 
 vim.keymap.set("n", ";s", ":SessionManager load_session<CR>")
 vim.keymap.set("n", "<leader>ss", ":SessionManager save_current_session<CR>")
-vim.keymap.set("n", "<leader>o", ":!C:\\dev\\scoop\\apps\\wezterm\\current\\wezterm-gui.exe start --cwd .<CR>", { silent = true})
+
+vim.keymap.set("n", "<leader>o", ":silent !C:\\dev\\scoop\\apps\\wezterm\\current\\wezterm-gui.exe start --cwd .<CR>", { silent = true })
 vim.keymap.set("n", "<CR>",":noh<CR>", { silent = true })
+vim.keymap.set("n", "<C-;>", ";")
+vim.keymap.set("n", "te", ":tabedit<CR>", { silent = true })
