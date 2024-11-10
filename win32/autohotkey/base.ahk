@@ -38,6 +38,12 @@ CapsLock::LCtrl
 	RunWait "wscript C:\dev\.dotfiles\win32\kill-process.vbs " WinGetPID("A")
 }
 
+#HotIf WinActive("ahk_exe explorer.exe")
+	#q:: {
+		SendEvent "{Ctrl down}{w down}{w up}{Ctrl down}"
+	}
+#HotIf
+
 !e:: {
 	; restart explorer
 	RunWait "taskkill /F /IM explorer.exe"
