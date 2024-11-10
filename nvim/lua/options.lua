@@ -14,12 +14,12 @@ vim.g.neovide_fullscreen = false
 vim.g.neovide_cursor_animation_length = 0
 vim.g.neovide_cursor_trail_size = 0
 vim.g.neovide_cursor_antialiasing = true
-vim.o.guifont = "Roboto Mono:h16"
+vim.o.guifont = "Roboto Mono:h14"
 vim.g.neovide_cursor_animate_in_insert_mode = true
 vim.g.neovide_cursor_animate_command_line = true
 ---
 
-vim.cmd("colorscheme solarized-osaka")
+vim.cmd("colorscheme catppuccin")
 vim.cmd("set clipboard+=unnamed,unnamedplus")
 vim.o.hlsearch = true
 vim.wo.number = true
