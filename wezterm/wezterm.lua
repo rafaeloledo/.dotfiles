@@ -13,12 +13,15 @@ wezterm.on('gui-startup', function(cmd)
 end)
 
 return {
+	colors = {
+		background = 'hsla(192, 100%, 5%, 1)',
+		cursor_bg = 'hsla(194, 14%, 40%, 1)'
+	},
   enable_tab_bar = false, -- toggle comment if want it
   enable_wayland = false,
-  font_size = 16,
+  font_size = 14,
   font = wezterm.font('Roboto Mono'), -- i didn't have trouble in termux
-  color_scheme = "Solarized Dark - Patched",
-  window_background_opacity = 0.85,
+  window_background_opacity = 0.9,
   enable_scroll_bar = false,
   initial_cols = 119,
   initial_rows = 36,
