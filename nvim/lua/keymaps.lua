@@ -41,8 +41,8 @@ vim.keymap.set("n", "<C-w>.", ":vertical resize +10<CR>", { silent = true })
 -- reload config doom emacs style
 vim.keymap.set("n", "<leader>hrr", ":silent !home-manager switch --flake /mnt/share/.dotfiles/nix --impure 1>/dev/null 2>&1 <cr>", { silent = true })
 
-vim.keymap.set("n", ";s", ":SessionManager load_session<CR>", { silent = true })
-vim.keymap.set("n", "<leader>ss", ":SessionManager save_current_session<CR>", { silent = true })
+vim.keymap.set("n", "<C-s>", ":SessionManager load_session<CR>", { silent = true })
+vim.keymap.set("n", ";s", ":SessionManager save_current_session<CR>", { silent = true })
 vim.keymap.set("n", "<leader>cd", function ()
 	vim.api.nvim_set_current_dir(vim.fn.expand("%:p:h"))
 end)
@@ -51,3 +51,5 @@ vim.keymap.set("n", "<leader>o", ":silent !C:\\dev\\scoop\\apps\\wezterm\\curren
 vim.keymap.set("n", "<CR>",":noh<CR>", { silent = true })
 vim.keymap.set("n", "<C-;>", ";")
 vim.keymap.set("n", "te", ":tabedit<CR>", { silent = true })
+
+vim.keymap.set("n", "<C-t>g", ":LazyGit<CR>", { silent = true })

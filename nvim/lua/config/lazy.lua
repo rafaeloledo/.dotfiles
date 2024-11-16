@@ -31,6 +31,8 @@ require("lazy").setup({
   "onsails/lspkind.nvim",
   "tpope/vim-surround",
 	"nvim-telescope/telescope-file-browser.nvim",
+	"nvim-lualine/lualine.nvim",
+	"kdheepak/lazygit.nvim",
 
   "nvim-telescope/telescope-symbols.nvim",
   { "nvim-telescope/telescope.nvim", branch = "master" }, -- to acess preview scrolling left and right

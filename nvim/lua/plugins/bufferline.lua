@@ -6,6 +6,7 @@ require('bufferline').setup{
 	},
 }
 
-vim.keymap.set("n", "<Tab>", ":BufferLineCycleNext<CR>", { silent = true })
-vim.keymap.set("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", { silent = true })
+-- Don't use Tabs here, conflicts with <C-i>
+vim.keymap.set("n", "tn", ":BufferLineCycleNext<CR>", { silent = true })
+vim.keymap.set("n", "tp", ":BufferLineCyclePrev<CR>", { silent = true })
 vim.keymap.set("n", "q", ":bd<CR>", { silent = true })

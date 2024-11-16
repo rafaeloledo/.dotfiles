@@ -1,1 +1,1 @@
-require("solarized-osaka").setup {}
+require("solarized-osaka").setup{}
