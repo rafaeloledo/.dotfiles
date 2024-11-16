@@ -11,7 +11,7 @@ require("lualine").setup{
 				symbols = { alternate_file = '' },
 			},
 		},
-		lualine_b = { '' },
+		lualine_b = { 'branch' },
 		lualine_c = { '' },
 		lualine_x = {
 			'encoding',
