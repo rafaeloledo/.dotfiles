@@ -83,12 +83,15 @@ WinActive("ahk_exe LeagueClientUx.exe"))
 #HotIf
 
 #HotIf not (WinActive("ahk_exe League of Legends.exe") or
-WinActive("ahk_exe wezterm-gui.exe"))
+WinActive("ahk_exe wezterm-gui.exe") or
+WinActive("Neovide"))
 	!1::SendEvent "{LWin down}{LCtrl down}{Left down}{LWin up}{LCtrl up}{Left up}"
 	!2::SendEvent "{LWin down}{LCtrl down}{Right down}{LWin up}{LCtrl up}{Right up}"
 #HotIf
 
-#HotIf WinActive("ahk_exe wezterm-gui.exe")
+
+#HotIf WinActive("ahk_exe wezterm-gui.exe") or 
+WinActive("Neovide")
 	!1::{
 		SendEvent "{t down}{h down}{h up}{t up}"
 	}
