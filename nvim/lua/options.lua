@@ -14,6 +14,7 @@ vim.g.neovide_fullscreen = false
 vim.g.neovide_cursor_animation_length = 0
 vim.g.neovide_cursor_trail_size = 0
 vim.g.neovide_cursor_antialiasing = true
+-- https://github.com/ryanoasis/nerd-fonts/releases
 vim.o.guifont = "RobotoMono Nerd Font:h14"
 vim.g.neovide_cursor_animate_in_insert_mode = true
 vim.g.neovide_cursor_animate_command_line = true
@@ -48,3 +49,5 @@ vim.cmd("set nolist")
 
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
+
+vim.opt.cmdheight = 0

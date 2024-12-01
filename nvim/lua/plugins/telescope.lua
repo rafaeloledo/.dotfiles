@@ -70,7 +70,7 @@ telescope.setup {
 local set = vim.keymap.set
 local builtin = require('telescope.builtin')
 
-set('n', ';f', builtin.find_files)
+set('n', '<C-p>', builtin.find_files)
 set('n', ';d', builtin.diagnostics)
 set('n', ';r', builtin.live_grep)
 

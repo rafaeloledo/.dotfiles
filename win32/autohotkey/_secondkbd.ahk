@@ -1,4 +1,4 @@
 #HotIf WinActive("ahk_exe League of Legends.exe")
-`::Esc
-Esc::`
+	`::Esc
+	Esc::`
 #HotIf

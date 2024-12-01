@@ -8,6 +8,8 @@ wezterm.on('gui-startup', function(cmd)
 	local tab, pane, window = wezterm.mux.spawn_window(cmd or {
 		position = { x = (screen.width - width) / 2, y = (screen.height - height) / 2},
 	})
+	local _, second_pane, _ = window:spawn_tab {}
+	local _, third_pane, _ = window:spawn_tab {}
 
 	window:gui_window():set_inner_size(width, height)
 end)
@@ -20,7 +22,7 @@ return {
   enable_tab_bar = false, -- toggle comment if want it
   enable_wayland = false,
   font_size = 14,
-  font = wezterm.font('Roboto Mono'), -- i didn't have trouble in termux
+  font = wezterm.font('RobotoMono Nerd Font'), -- i didn't have trouble in termux
   window_background_opacity = 0.9,
   enable_scroll_bar = false,
   initial_cols = 119,

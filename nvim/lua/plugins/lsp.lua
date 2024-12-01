@@ -28,11 +28,6 @@ local on_attach = function(_, bufnr)
 
   -- Lesser used LSP functionality
   nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
-  nmap('<leader>wa', vim.lsp.buf.add_workspace_folder, '[W]orkspace [A]dd Folder')
-  nmap('<leader>wr', vim.lsp.buf.remove_workspace_folder, '[W]orkspace [R]emove Folder')
-  nmap('<leader>wl', function()
-    print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-  end, '[W]orkspace [L]ist Folders')
 
   -- Create a command `:Format` local to the LSP buffer
   vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
@@ -117,12 +112,12 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 
 -- Assume that is a directory on the fs gived as argument
-if vim.fn.argc() == 1 then
-	vim.api.nvim_create_autocmd("VimEnter", {
-		pattern = "*",
-		callback = function()
-			vim.api.nvim_set_current_dir(vim.fn.expand("%:p:h"))
-		end
-	})
-end
-
+-- if vim.fn.argc() == 1 then
+-- 	vim.api.nvim_create_autocmd("VimEnter", {
+-- 		pattern = "*",
+-- 		callback = function()
+-- 			vim.api.nvim_set_current_dir(vim.fn.expand("%:p:h"))
+-- 		end
+-- 	})
+-- end
+--
