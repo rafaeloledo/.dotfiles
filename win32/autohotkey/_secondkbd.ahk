@@ -1,4 +1,11 @@
-#HotIf WinActive("ahk_exe League of Legends.exe")
-	`::Esc
-	Esc::`
-#HotIf
+`::Esc
+Esc::`
+
+#SuspendExempt
+#t::Suspend
+#SuspendExempt False
+
+
+#r:: {
+  Reload
+} 
