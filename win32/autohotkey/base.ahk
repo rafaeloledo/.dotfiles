@@ -85,7 +85,7 @@ CapsLock::LCtrl
 }
 
 #m:: {
-    Run "soundvolumeview.exe /Switch 2- Fifine Microphone"
+    Run "soundvolumeview.exe /Switch 3- Fifine Microphone"
 }
 
 #HotIf not (WinActive("ahk_exe League of Legends.exe") or
@@ -132,20 +132,20 @@ WinActive("Neovide")
 #HotIf
 
 #HotIf WinActive("ahk_exe League of Legends.exe")
-!`::F1
-!1::F2
-!2::F3
-!3::F4
+  !`::F1
+  !Esc::F1
+  !1::F2
+  !2::F3
+  !3::F4
 
-`::Esc
-Esc::`
-
-#m:: {
-    SendEvent "{enter}{/}mute all{enter}"
-}
+  #m:: {
+      SendEvent "{enter}{/}mute all{enter}"
+  }
 #HotIf
 
-#HotIf WinActive("ahk_exe Code.exe")
+#HotIf WinActive("ahk_exe Code.exe") or
+WinActive("ahk_exe neovide.exe") or
+WinActive("ahk_exe wezterm-gui.exe")
     global visitedList := []
     global previousWindow := ""
     global firstWindow := ""
