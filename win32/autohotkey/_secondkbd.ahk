@@ -1,5 +1,5 @@
-`::Esc
 Esc::`
+`::PrintScreen
 
 #SuspendExempt
 #t::Suspend

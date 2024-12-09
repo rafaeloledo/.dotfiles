@@ -10,3 +10,5 @@ vim.g.neovide_padding_left = 0
 vim.g.neovide_hide_mouse_when_typing = true
 vim.g.neovide_cursor_trail_size = 0
 vim.g.neovide_cursor_antialiasing = true
+
+vim.o.cursorline = false

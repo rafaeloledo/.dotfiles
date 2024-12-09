@@ -5,7 +5,7 @@
 +!PgDn:: Send "+{End}"
 !PgUp:: Send "{Home}"
 +!PgUp:: Send "+{Home}"
-CapsLock::LCtrl
+CapsLock::Esc
 
 !F3:: {
     SendEvent "{Media_Next}"
@@ -138,8 +138,15 @@ WinActive("Neovide")
   !2::F3
   !3::F4
 
+  m::Esc
+  CapsLock::Return
+
   #m:: {
-      SendEvent "{enter}{/}mute all{enter}"
+    SendEvent "{enter}{/}mute all{enter}"
+  }
+
+  #q:: {
+    SendEvent "{Alt down}{F4}{Alt up}"
   }
 #HotIf
 
@@ -291,4 +298,8 @@ WinActive("ahk_exe brave.exe")
 
 #r:: {
     Reload
+}
+
+#a:: {
+  RunWait "neovide C:\dev\anotacoes"
 }
