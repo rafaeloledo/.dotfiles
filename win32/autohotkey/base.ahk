@@ -99,36 +99,36 @@ WinActive("ahk_exe LeagueClientUx.exe"))
 #HotIf not (WinActive("ahk_exe League of Legends.exe") or
 WinActive("ahk_exe wezterm-gui.exe") or
 WinActive("Neovide"))
-!1:: SendEvent "{LWin down}{LCtrl down}{Left down}{LWin up}{LCtrl up}{Left up}"
-!2:: SendEvent "{LWin down}{LCtrl down}{Right down}{LWin up}{LCtrl up}{Right up}"
+  !1:: SendEvent "{LWin down}{LCtrl down}{Left down}{LWin up}{LCtrl up}{Left up}"
+  !2:: SendEvent "{LWin down}{LCtrl down}{Right down}{LWin up}{LCtrl up}{Right up}"
 #HotIf
 
 #HotIf WinActive("ahk_exe wezterm-gui.exe") or
 WinActive("Neovide")
-!`:: {
-    SendEvent "{LCtrl down}{h}{LCtrl up}"
-}
-!1:: {
-    SendEvent "{LCtrl down}{t}{LCtrl up}"
-}
-!2:: {
-    SendEvent "{LCtrl down}{n}{LCtrl up}"
-}
-!3:: {
-    SendEvent "{LCtrl down}{s}{LCtrl up}"
-}
-!q:: {
-    SendEvent "{space}{b}{h}"
-}
-!w:: {
-    SendEvent "{space}{b}{l}"
-}
-!d:: {
-    SendEvent "{space}{b}{d}"
-}
-!e:: {
-    return
-}
+  !`:: {
+      SendEvent "{LCtrl down}{h}{LCtrl up}"
+  }
+  !1:: {
+      SendEvent "{LCtrl down}{t}{LCtrl up}"
+  }
+  !2:: {
+      SendEvent "{LCtrl down}{n}{LCtrl up}"
+  }
+  !3:: {
+      SendEvent "{LCtrl down}{s}{LCtrl up}"
+  }
+  !q:: {
+      SendEvent "{space}{b}{h}"
+  }
+  !w:: {
+      SendEvent "{space}{b}{l}"
+  }
+  !d:: {
+      SendEvent "{space}{b}{d}"
+  }
+  !e:: {
+      return
+  }
 #HotIf
 
 #HotIf WinActive("ahk_exe League of Legends.exe")
@@ -150,51 +150,6 @@ WinActive("Neovide")
   }
 #HotIf
 
-#HotIf WinActive("ahk_exe Code.exe") or
-WinActive("ahk_exe neovide.exe") or
-WinActive("ahk_exe wezterm-gui.exe")
-    global visitedList := []
-    global previousWindow := ""
-    global firstWindow := ""
-
-    !Esc:: {
-        global visitedList, previousWindow, firstWindow
-        allIDS := WinGetList()
-        activeWindow := WinGetID("A")
-        currentProcess := WinGetProcessName(activeWindow)
-
-        previousWindow := activeWindow
-
-        for id in allIDS {
-            visited := false
-            for value in visitedList {
-                    if (value == id) {
-                        visited := true
-                    }
-            }
-
-            isTheSameProcess := WinGetProcessName(id) == currentProcess
-            isNotTheSameWindow := id != activeWindow
-            isNotPreviousWindow := id != previousWindow
-
-            if (isTheSameProcess && isNotTheSameWindow && isNotPreviousWindow) {
-                    if (!visited) {
-                        if (firstWindow == "") {
-                            firstWindow := activeWindow
-                            visitedList.Push(firstWindow)
-                        }
-                        WinActivate(id) 
-                        visitedList.Push(id)
-                        Return
-                    }
-            }
-        }
-
-        WinActivate(firstWindow)
-        visitedList := []
-        firstWindow := ""
-    }
-#HotIf
 
 #HotIf WinActive("ahk_exe devenv.exe") or
 WinActive("ahk_exe Code.exe")
