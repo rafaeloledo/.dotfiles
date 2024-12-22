@@ -1,7 +1,9 @@
 function fish_user_key_bindings
-    bind \cf tmux-sessionizer
+		bind \cz 'fg; commandline -f repaint'
+    bind \cf tmux_sessionizer
     # vim like
     bind \el forward-char
+    bind \ek up-char
     #bind \; 'echo -e "\n"; ll; commandline -f repaint'
     #bind \' 'echo -e "\n"; lt; commandline -f repaint'
     bind \cd 'commandline cd '

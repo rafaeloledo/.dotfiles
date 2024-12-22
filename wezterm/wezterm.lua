@@ -20,7 +20,7 @@ end)
 
 config.enable_tab_bar = false -- toggle comment if want it
 config.enable_wayland = false
-config.font_size = 14
+config.font_size = 13
 config.font = wezterm.font("BlexMono Nerd Font")
 config.window_background_opacity = 0.9
 config.enable_scroll_bar = false
