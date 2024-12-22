@@ -1,6 +1,4 @@
-if vim.fn.exists(":Oil") > 0 then
-  vim.keymap.set("n", "-", "<cmd>Oil<CR>")
-end
+vim.keymap.set("n", "-", "<cmd>Oil<CR>")
 
 return {
   "stevearc/oil.nvim",
