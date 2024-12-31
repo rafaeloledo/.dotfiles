@@ -10,22 +10,16 @@ wezterm.on("gui-startup", function(cmd)
 		position = { x = (screen.width - width) / 2, y = (screen.height - height) / 2 },
 	})
 
-	if wezterm.target_triple ~= "x86_64-pc-windows-msvc" then
-		window:gui_window():toggle_fullscreen()
-		return
-	end
-
 	window:gui_window():set_inner_size(width, height)
 end)
 
-config.enable_tab_bar = false -- toggle comment if want it
+config.enable_tab_bar = false
 config.enable_wayland = false
-config.font_size = 13
+config.font_size = 14
 config.font = wezterm.font("BlexMono Nerd Font")
-config.window_background_opacity = 0.9
 config.enable_scroll_bar = false
 config.initial_cols = 119
-config.initial_rows = 36
+config.initial_rows = 34
 config.default_cursor_style = "SteadyBar"
 
 if wezterm.target_triple == "x86_64-pc-windows-msvc" then
@@ -38,7 +32,7 @@ config.window_close_confirmation = "NeverPrompt"
 config.window_padding = {
 	left = 0,
 	right = 0,
-	top = 1,
+	top = 0,
 	bottom = 0,
 }
 

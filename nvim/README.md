@@ -1,1 +1,1 @@
-nvim-minimal
+nvim-lazyvim

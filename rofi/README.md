@@ -1,1 +1,0 @@
-![my-rofi](rofi.png)
